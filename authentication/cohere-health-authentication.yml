@@ -1,0 +1,45 @@
+generated: '2026-07-24'
+method: searched
+source: https://login.coherehealth.com/.well-known/openid-configuration
+note: >-
+  Auth profile captured from the live OIDC discovery document served by the
+  Cohere platform login host (login.coherehealth.com, an Okta-backed identity
+  tenant). This governs authentication to the Cohere Unify platform / provider
+  portal. The CRD/DTR/PAS FHIR APIs are documented as SMART-on-FHIR (OAuth2)
+  applications, but their concrete authorize/token endpoints and scopes are
+  provisioned per health-plan tenant and are not published anonymously.
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode, clientCredentials, deviceCode, refreshToken, implicit, password]
+  pkce: S256
+  identity_provider: Okta
+schemes:
+  - name: OpenIDConnect
+    type: openIdConnect
+    openIdConnectUrl: https://login.coherehealth.com/.well-known/openid-configuration
+    issuer: https://login.coherehealth.com
+    endpoints:
+      authorization: https://login.coherehealth.com/oauth2/v1/authorize
+      token: https://login.coherehealth.com/oauth2/v1/token
+      userinfo: https://login.coherehealth.com/oauth2/v1/userinfo
+      jwks: https://login.coherehealth.com/oauth2/v1/keys
+      registration: https://login.coherehealth.com/oauth2/v1/clients
+      introspection: https://login.coherehealth.com/oauth2/v1/introspect
+      revocation: https://login.coherehealth.com/oauth2/v1/revoke
+      device_authorization: https://login.coherehealth.com/oauth2/v1/device/authorize
+      end_session: https://login.coherehealth.com/oauth2/v1/logout
+    grant_types_supported: [authorization_code, implicit, refresh_token, password, urn:ietf:params:oauth:grant-type:device_code]
+    token_endpoint_auth_methods_supported: [client_secret_basic, client_secret_post, client_secret_jwt, private_key_jwt, none]
+    code_challenge_methods_supported: [S256]
+    sources: [well-known/cohere-health-openid-configuration.json]
+  - name: SMARTonFHIR
+    type: oauth2
+    documented: true
+    published: false
+    note: >-
+      The CRD, DTR and PAS APIs are documented as supporting SMART on FHIR
+      applications (OAuth2 authorization-code and/or client-credentials with
+      patient/*, user/* or system/* scopes per the Da Vinci CRD/DTR/PAS
+      implementation guides). Endpoints and scopes are per-health-plan tenant
+      and not anonymously served, so no concrete scheme is asserted here.
+    sources: [https://www.coherehealth.com/utilization-management/api-based]

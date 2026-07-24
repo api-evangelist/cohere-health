@@ -1,0 +1,65 @@
+generated: '2026-07-24'
+method: searched
+source: >-
+  https://www.coherehealth.com/utilization-management/api-based +
+  https://www.coherehealth.com/news/cohere-health-earns-hitrust-r2-certification +
+  https://login.coherehealth.com/.well-known/openid-configuration
+note: >-
+  Standards and compliance posture for Cohere Health's utilization-management
+  APIs and platform. API conformance items are documented product claims (the
+  APIs are partner/health-plan gated so no live conformance test was possible);
+  OAuth2/OIDC items are evidenced by the live discovery document on the platform
+  login host. Compliance certifications are published on the company news/blog.
+standards:
+  # API / interoperability standards (documented product claims)
+  - id: hl7-fhir-r4
+    conforms: true
+    evidence: HL7 Da Vinci Burden Reduction IGs (CRD/DTR/PAS) are FHIR R4; documented on the API product page.
+  - id: davinci-crd
+    conforms: true
+    evidence: Coverage Requirements Discovery API documented as meeting the HL7 Da Vinci CRD Implementation Guide.
+  - id: davinci-dtr
+    conforms: true
+    evidence: Documentation Templates and Rules API documented as meeting the HL7 Da Vinci DTR Implementation Guide (FHIR Questionnaire + CQL).
+  - id: davinci-pas
+    conforms: true
+    evidence: Prior Authorization Support API documented as meeting the HL7 Da Vinci PAS Implementation Guide.
+  - id: smart-on-fhir
+    conforms: true
+    evidence: APIs documented as supporting SMART on FHIR applications.
+  - id: x12-278
+    conforms: true
+    evidence: PAS wraps the X12 278 utilization-management prior-authorization exchange in a FHIR interface.
+  - id: cms-0057-f
+    conforms: true
+    evidence: Positioned as a single-vendor solution for CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F) API compliance.
+  - id: us-core
+    conforms: true
+    evidence: Asserted via SMART on FHIR + Da Vinci IG conformance (US Core profiles underpin the Da Vinci Burden Reduction IGs); not independently verified.
+  # Auth standards (evidenced by live discovery document)
+  - id: oauth2
+    conforms: true
+    evidence: login.coherehealth.com serves OAuth 2.0 authorization-server metadata (RFC 8414).
+  - id: oidc
+    conforms: true
+    evidence: login.coherehealth.com serves an OpenID Connect discovery document (openid-configuration).
+  - id: oauth2-pkce
+    conforms: true
+    evidence: code_challenge_methods_supported = [S256] in the discovery document (RFC 7636).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No public OpenAPI available to confirm application/problem+json error responses.
+compliance:
+  program: HITRUST
+  certifications:
+    - name: HITRUST r2 (Risk-based, 2-year) Certification
+      scope: Cohere Health Utilization Management (UM) collaboration platform
+      first_earned: '2022-08-17'
+      status: certified (maintained via recertification)
+      source: https://www.coherehealth.com/news/cohere-health-earns-hitrust-r2-certification
+  standards_covered: [ISO, NIST, PCI, HIPAA, GDPR]
+  note: >-
+    HITRUST r2 certification demonstrates the platform meets national and
+    international security, privacy and regulatory standards including ISO, NIST,
+    PCI, HIPAA and GDPR (per the company announcement). SOC 2 not separately
+    documented.

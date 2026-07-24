@@ -25,7 +25,7 @@ tags:
 - SMART on FHIR
 - Interoperability
 created: '2026-07-24'
-modified: '2026-07-24'
+modified: '2026-07-24T18:00:00Z'
 specificationVersion: '0.19'
 apis:
 - aid: cohere-health:cohere-health-crd-api
@@ -78,6 +78,8 @@ apis:
   - type: Documentation
     url: https://www.coherehealth.com/utilization-management/api-based
 common:
+- type: DomainSecurity
+  url: security/cohere-health-domain-security.yml
 - type: Website
   url: https://www.coherehealth.com/
 - type: Documentation
@@ -92,8 +94,28 @@ common:
   url: https://www.coherehealth.com/blog
 - type: Support
   url: https://www.coherehealth.com/connect
+- type: HelpCenter
+  url: https://help.coherehealth.com/cohere-health-learning-center/en
 - type: PrivacyPolicy
   url: https://www.coherehealth.com/privacy-policy
+- type: TermsOfService
+  url: https://www.coherehealth.com/terms-and-conditions
+- type: SignUp
+  url: https://next.coherehealth.com/organization_onboarding
+- type: Compliance
+  url: https://www.coherehealth.com/news/cohere-health-earns-hitrust-r2-certification
+- type: Authentication
+  url: authentication/cohere-health-authentication.yml
+- type: OAuthScopes
+  url: scopes/cohere-health-scopes.yml
+- type: WellKnown
+  url: well-known/cohere-health-well-known.yml
+- type: Conformance
+  url: conformance/cohere-health-conformance.yml
+- type: DomainSecurity
+  url: security/cohere-health-domain-security.yml
+- type: LLMsTxt
+  url: llms/cohere-health-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

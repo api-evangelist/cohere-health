@@ -1,0 +1,48 @@
+generated: '2026-07-24'
+method: searched
+source: live /.well-known/ probes of Cohere Health hosts
+note: >-
+  The Cohere platform login host login.coherehealth.com is an Okta-backed
+  identity tenant and serves real OIDC/OAuth2 discovery documents. The marketing
+  host www.coherehealth.com and apex coherehealth.com serve no /.well-known/
+  discovery surface. The per-health-plan SMART-on-FHIR / FHIR API authorization
+  servers for the CRD/DTR/PAS APIs are provisioned per tenant and are not
+  anonymously discoverable, so no FHIR CapabilityStatement or SMART configuration
+  was captured here.
+hosts:
+  - host: https://login.coherehealth.com
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: cohere-health-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: cohere-health-oauth-authorization-server.json
+      - path: /.well-known/oauth-protected-resource
+        status: 405
+      - path: /.well-known/security.txt
+        status: 405
+      - path: /.well-known/smart-configuration
+        status: 405
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://www.coherehealth.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/smart-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://coherehealth.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404

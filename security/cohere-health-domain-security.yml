@@ -1,0 +1,16 @@
+generated: '2026-07-24'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.coherehealth.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 11:45:56 2026 GMT
+  hsts: false
+domains:
+- domain: coherehealth.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

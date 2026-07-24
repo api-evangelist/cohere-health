@@ -1,0 +1,40 @@
+generated: '2026-07-24'
+method: searched
+source: https://login.coherehealth.com/.well-known/openid-configuration
+docs: https://www.coherehealth.com/utilization-management/api-based
+note: >-
+  These are the standard OIDC scopes advertised by the Cohere platform login
+  host (login.coherehealth.com, an Okta-backed identity tenant) that governs
+  access to the Cohere Unify platform / provider portal. They are NOT the
+  per-health-plan SMART-on-FHIR API scopes for the CRD/DTR/PAS FHIR APIs, which
+  are provisioned per tenant and not published anonymously (SMART on FHIR
+  patient/*, user/*, system/* scopes per the Da Vinci implementation guides).
+schemes:
+  - name: OpenIDConnect
+    source: well-known/cohere-health-openid-configuration.json
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://login.coherehealth.com/oauth2/v1/authorize
+        tokenUrl: https://login.coherehealth.com/oauth2/v1/token
+scopes:
+  - scope: openid
+    description: OpenID Connect sign-in; returns an ID token identifying the user.
+    flows: [authorizationCode]
+  - scope: email
+    description: Access to the user's email address claim.
+    flows: [authorizationCode]
+  - scope: profile
+    description: Access to the user's basic profile claims.
+    flows: [authorizationCode]
+  - scope: address
+    description: Access to the user's address claim.
+    flows: [authorizationCode]
+  - scope: phone
+    description: Access to the user's phone number claim.
+    flows: [authorizationCode]
+  - scope: groups
+    description: Access to the user's group memberships.
+    flows: [authorizationCode]
+  - scope: offline_access
+    description: Issue a refresh token so the client can obtain new access tokens without re-prompting.
+    flows: [authorizationCode]
