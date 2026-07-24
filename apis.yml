@@ -1,0 +1,99 @@
+aid: cohere-health
+url: https://raw.githubusercontent.com/api-evangelist/cohere-health/refs/heads/main/apis.yml
+name: Cohere Health
+kind: company
+description: Cohere Health is a United States clinical-intelligence and utilization-management
+  company that digitizes prior authorization for health plans. Its Unify platform applies
+  clinical AI and evidence-based policy to streamline authorization intake, review, and
+  decisioning, and its API suite implements the HL7 Da Vinci Burden Reduction guides —
+  Coverage Requirements Discovery (CRD), Documentation Templates and Rules (DTR), and
+  Prior Authorization Support (PAS) — to help payers meet the CMS Interoperability and
+  Prior Authorization Final Rule (CMS-0057-F). The FHIR R4 APIs support SMART on FHIR
+  applications and are sold to and embedded with health plans rather than offered through
+  a self-serve public developer portal; the documented product surface is real but the
+  API endpoints are partner/health-plan gated.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Healthcare
+- United States
+- Prior Authorization
+- Utilization Management
+- Payer
+- FHIR
+- HL7
+- Da Vinci
+- SMART on FHIR
+- Interoperability
+created: '2026-07-24'
+modified: '2026-07-24'
+specificationVersion: '0.19'
+apis:
+- aid: cohere-health:cohere-health-crd-api
+  name: Cohere Health Coverage Requirements Discovery (CRD) API
+  description: HL7 Da Vinci Coverage Requirements Discovery (CRD) FHIR API that lets a
+    provider system instantly verify whether prior authorization is required and confirm
+    service coverage at the point of care. Documented as meeting Da Vinci Implementation
+    Guide standards and supporting SMART on FHIR; provisioned per health plan (partner
+    gated), with no self-serve public developer portal or published base URL.
+  humanURL: https://www.coherehealth.com/utilization-management/api-based
+  tags:
+  - Coverage Requirements Discovery
+  - FHIR
+  - Da Vinci
+  - Prior Authorization
+  properties:
+  - type: Documentation
+    url: https://www.coherehealth.com/utilization-management/api-based
+- aid: cohere-health:cohere-health-dtr-api
+  name: Cohere Health Documentation Templates and Rules (DTR) API
+  description: HL7 Da Vinci Documentation Templates and Rules (DTR) FHIR API that intelligently
+    gathers and submits the documentation a prior authorization request requires, driven
+    by digitized medical policy (FHIR Questionnaire plus CQL). Documented as meeting Da
+    Vinci Implementation Guide standards and supporting SMART on FHIR; provisioned per
+    health plan (partner gated), with no self-serve public developer portal or published
+    base URL.
+  humanURL: https://www.coherehealth.com/utilization-management/api-based
+  tags:
+  - Documentation Templates and Rules
+  - FHIR
+  - Da Vinci
+  - Prior Authorization
+  properties:
+  - type: Documentation
+    url: https://www.coherehealth.com/utilization-management/api-based
+- aid: cohere-health:cohere-health-pas-api
+  name: Cohere Health Prior Authorization Support (PAS) API
+  description: HL7 Da Vinci Prior Authorization Support (PAS) FHIR API that submits an
+    authorization request and returns the outcome, wrapping X12 278 utilization-management
+    exchange in a FHIR interface for CMS-0057-F compliance. Documented as meeting Da Vinci
+    Implementation Guide standards and supporting SMART on FHIR; provisioned per health
+    plan (partner gated), with no self-serve public developer portal or published base URL.
+  humanURL: https://www.coherehealth.com/utilization-management/api-based
+  tags:
+  - Prior Authorization Support
+  - FHIR
+  - Da Vinci
+  - Prior Authorization
+  properties:
+  - type: Documentation
+    url: https://www.coherehealth.com/utilization-management/api-based
+common:
+- type: Website
+  url: https://www.coherehealth.com/
+- type: Documentation
+  url: https://www.coherehealth.com/utilization-management/api-based
+- type: Login
+  url: https://login.coherehealth.com/
+- type: GitHubOrganization
+  url: https://github.com/coherehealth
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cohere-health
+- type: Blog
+  url: https://www.coherehealth.com/blog
+- type: Support
+  url: https://www.coherehealth.com/connect
+- type: PrivacyPolicy
+  url: https://www.coherehealth.com/privacy-policy
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

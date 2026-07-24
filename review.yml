@@ -1,0 +1,117 @@
+aid: cohere-health
+name: Cohere Health
+review:
+  question: Does Cohere Health expose a public, self-serve developer portal with a downloadable OpenAPI or an anonymously reachable FHIR CapabilityStatement / SMART-on-FHIR configuration?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+findings:
+  homeMarket: United States
+  summary: |
+    Cohere Health is a US clinical-intelligence / utilization-management vendor
+    that digitizes prior authorization for health plans. Its documented API
+    family is real and named on the product site — three HL7 Da Vinci Burden
+    Reduction FHIR APIs: Coverage Requirements Discovery (CRD), Documentation
+    Templates and Rules (DTR), and Prior Authorization Support (PAS) — presented
+    as meeting Da Vinci Implementation Guide standards, supporting SMART on FHIR
+    applications, and enabling health-plan compliance with the CMS
+    Interoperability and Prior Authorization Final Rule (CMS-0057-F). However,
+    the APIs are sold to and embedded with health plans; there is NO public,
+    self-serve developer portal, NO downloadable OpenAPI/Swagger, and NO
+    anonymously served FHIR CapabilityStatement or SMART configuration. This is
+    an honest gated-but-documented result.
+  developerPortal:
+    url: ''
+    status: none
+    note: |
+      No first-party developer subdomain resolves — developer.coherehealth.com,
+      docs.coherehealth.com, fhir.coherehealth.com and api.coherehealth.com all
+      fail to resolve (curl exit / HTTP 000). www.coherehealth.com/developers,
+      /developer, /docs, /api and /api-docs all return 404. The nearest public
+      documentation surface is the product/marketing API page below.
+  documentationSurface:
+    url: https://www.coherehealth.com/utilization-management/api-based
+    status: 200
+    note: Product page describing the CRD, DTR and PAS FHIR APIs, Da Vinci conformance, SMART on FHIR support and CMS-0057-F alignment. No endpoints, base URLs or specs published.
+  fhirCapabilityStatement:
+    captured: false
+    version: null
+    note: |
+      No anonymously reachable FHIR CapabilityStatement was found. The health-plan
+      / provider application at next.coherehealth.com is a client-side React SPA
+      that returns HTTP 200 with an identical HTML shell for ANY path — including
+      /metadata, /.well-known/smart-configuration and /fhir/metadata as well as a
+      deliberately bogus path — so those 200s are SPA catch-all responses, NOT a
+      real FHIR metadata endpoint. No CapabilityStatement JSON was served, so none
+      was saved. FHIR version is not publicly disclosed (Da Vinci IGs are FHIR R4).
+  smartConfiguration:
+    captured: false
+    note: next.coherehealth.com/.well-known/smart-configuration returns the SPA HTML shell, not a JSON SMART configuration. SMART on FHIR support is asserted on the product page but not exposed anonymously.
+  downloadableSpecs:
+    count: 0
+    provenance: none
+    note: No OpenAPI/Swagger or FHIR CapabilityStatement/metadata could be harvested. Probed developer/docs/api/fhir hosts and www spec paths (/openapi.json, /swagger.json, /api-docs, /spec); none served a machine-readable contract. openapi/ directory intentionally left empty.
+  authModel:
+    scheme: SMART-on-FHIR / OAuth2
+    note: |
+      Product documentation states the APIs support SMART on FHIR applications,
+      which implies SMART-on-FHIR OAuth2 (authorization-code and/or
+      client-credentials with patient/*, user/* or system/* scopes) consistent
+      with the Da Vinci CRD/DTR/PAS implementation guides. The concrete authorize
+      / token endpoints and scope list are provisioned per health-plan tenant and
+      are not published anonymously, so no scopes were captured.
+  standardsConformance:
+    usCore: asserted
+    daVinci:
+    - Coverage Requirements Discovery (CRD)
+    - Documentation Templates and Rules (DTR)
+    - Prior Authorization Support (PAS)
+    carin: not-documented
+    ukCore: not-applicable
+    auCore: not-applicable
+    x12: PAS wraps X12 278 prior-authorization exchange in a FHIR interface (implied by Da Vinci PAS IG)
+    cms0057f: Positioned as a single-vendor solution for CMS-0057-F prior-authorization API compliance.
+  access:
+    model: gated
+    selfServe: false
+    note: APIs are embedded with / sold to health plans; provider onboarding is at next.coherehealth.com/organization_onboarding and tenant login at login.coherehealth.com. No open sandbox or self-serve API key.
+  githubOrganization:
+    url: https://github.com/coherehealth
+    status: 200
+    note: Organization exists with ~7 repos, mostly forks/infra including a fork of a smart-on-fhir-tutorial; no first-party API spec or SDK repo found.
+transports:
+- protocol: REST
+  scheme: https
+  note: FHIR R4 REST is the implied transport for the Da Vinci CRD/DTR/PAS APIs, but no public base URL is documented.
+  documented: false
+- protocol: FHIR
+  scheme: https
+  note: HL7 FHIR (R4) Da Vinci CRD/DTR/PAS. Endpoints provisioned per health plan; not publicly served.
+  documented: false
+sources:
+- url: https://www.coherehealth.com/utilization-management/api-based
+  type: Documentation
+  note: Names the CRD, DTR and PAS FHIR APIs, Da Vinci conformance, SMART on FHIR support and CMS-0057-F alignment.
+- url: https://www.coherehealth.com/blog/cms-0057-f-apis-are-only-the-tip-of-the-iceberg
+  type: Blog
+  note: Cohere Health commentary on CMS-0057-F prior-authorization API requirements.
+- url: https://next.coherehealth.com/organization_onboarding
+  type: SignUp
+  note: Provider organization onboarding (gated app). SPA returns 200 for any path.
+- url: https://login.coherehealth.com/
+  type: Login
+  note: Tenant login for the Cohere platform.
+- url: https://github.com/coherehealth
+  type: GitHubOrganization
+  note: Company GitHub org; no first-party API spec repo.
+actions:
+  openapiHarvested: false
+  specsSaved: 0
+  reason: |
+    No public OpenAPI or anonymously reachable FHIR CapabilityStatement /
+    smart-configuration was served (the next.coherehealth.com SPA returns an
+    identical HTML shell for every path, so its /metadata and
+    /.well-known/smart-configuration 200s are false positives and were NOT
+    saved). The documented CRD/DTR/PAS Da Vinci FHIR APIs are real but
+    partner/health-plan gated. Recorded as identity plus an honest
+    gated-but-documented API family.
