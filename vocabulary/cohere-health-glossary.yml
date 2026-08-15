@@ -1,0 +1,344 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.coherehealth.com/glossary
+name: Cohere Health Glossary
+description: >-
+  Cohere Health publishes a public glossary of utilization-management, prior-authorization,
+  interoperability and clinical-AI terminology, including its own product names (Cohere
+  Unify, Cohere Connect, Cohere Align, Cohere Complete) alongside industry and standards
+  vocabulary (CRD, DTR, PAS, CQL, CDex, FHIR, CMS-0057-F, HEDIS, DRG, X12 278).
+note: >-
+  Term list harvested from the published sitemap and the rendered <h1> of each glossary
+  page. The DEFINITION body is NOT present in the served HTML — each page ships an empty
+  Webflow rich-text block and the definition is composed client-side — so only the term
+  and its canonical URL are recorded here. Definitions were not fabricated. The per-term
+  meta description is a site-wide template ('Learn what X means and why it matters in
+  modern healthcare') and carries no definition content either.
+index: https://www.coherehealth.com/glossary
+term_count: 108
+definitions_machine_readable: false
+terms:
+  - term: "AAOS (American Academy of Orthopaedic Surgeons)"
+    slug: aaos-american-academy-of-orthopaedic-surgeons-9tn5v
+    url: https://www.coherehealth.com/glossary/aaos-american-academy-of-orthopaedic-surgeons-9tn5v
+  - term: "Accountable Care Organization (ACO)"
+    slug: accountable-care-organization-aco
+    url: https://www.coherehealth.com/glossary/accountable-care-organization-aco
+  - term: "Acute Care Hospital (ACH)"
+    slug: acute-care-hospital-ach
+    url: https://www.coherehealth.com/glossary/acute-care-hospital-ach
+  - term: "Adjudication"
+    slug: adjudication
+    url: https://www.coherehealth.com/glossary/adjudication
+  - term: "Administrative burden"
+    slug: administrative-burden
+    url: https://www.coherehealth.com/glossary/administrative-burden
+  - term: "Administrative nudge"
+    slug: administrative-nudge
+    url: https://www.coherehealth.com/glossary/administrative-nudge
+  - term: "Affordable Care Act (ACA)"
+    slug: affordable-care-act-aca
+    url: https://www.coherehealth.com/glossary/affordable-care-act-aca
+  - term: "Agentic AI"
+    slug: agentic-ai
+    url: https://www.coherehealth.com/glossary/agentic-ai
+  - term: "Agents"
+    slug: agents
+    url: https://www.coherehealth.com/glossary/agents
+  - term: "Ambulatory Surgery Center (ASC)"
+    slug: ambulatory-surgery-center-asc
+    url: https://www.coherehealth.com/glossary/ambulatory-surgery-center-asc
+  - term: "American College of Cardiology (ACC)"
+    slug: american-college-of-cardiology-acc
+    url: https://www.coherehealth.com/glossary/american-college-of-cardiology-acc
+  - term: "American Medical Association (AMA)"
+    slug: american-medical-association-ama
+    url: https://www.coherehealth.com/glossary/american-medical-association-ama
+  - term: "Android Package Kit (APK)"
+    slug: android-package-kit-apk
+    url: https://www.coherehealth.com/glossary/android-package-kit-apk
+  - term: "Application Programming Interface (API)"
+    slug: application-programming-interface-api
+    url: https://www.coherehealth.com/glossary/application-programming-interface-api
+  - term: "Artificial intelligence (AI)"
+    slug: artificial-intelligence-ai
+    url: https://www.coherehealth.com/glossary/artificial-intelligence-ai
+  - term: "Audit trail"
+    slug: audit-trail
+    url: https://www.coherehealth.com/glossary/audit-trail
+  - term: "Bundled payments"
+    slug: bundled-payments
+    url: https://www.coherehealth.com/glossary/bundled-payments
+  - term: "Care path"
+    slug: care-path
+    url: https://www.coherehealth.com/glossary/care-path
+  - term: "Care quality"
+    slug: care-quality
+    url: https://www.coherehealth.com/glossary/care-quality
+  - term: "CDex (Clinical Document Exchange)"
+    slug: cdex-clinical-document-exchange
+    url: https://www.coherehealth.com/glossary/cdex-clinical-document-exchange
+  - term: "CDI (Clinical Documentation Improvement)"
+    slug: cdi-clinical-documentation-improvement
+    url: https://www.coherehealth.com/glossary/cdi-clinical-documentation-improvement
+  - term: "Claims"
+    slug: claims
+    url: https://www.coherehealth.com/glossary/claims
+  - term: "Claims scrubbing"
+    slug: claims-scrubbing
+    url: https://www.coherehealth.com/glossary/claims-scrubbing
+  - term: "Clinical decision support (CDS)"
+    slug: clinical-decision-support-cds
+    url: https://www.coherehealth.com/glossary/clinical-decision-support-cds
+  - term: "Clinical intelligence"
+    slug: clinical-intelligence
+    url: https://www.coherehealth.com/glossary/clinical-intelligence
+  - term: "Clinical practice guidelines"
+    slug: clinical-practice-guidelines
+    url: https://www.coherehealth.com/glossary/clinical-practice-guidelines
+  - term: "Clinical Quality Language (CQL)"
+    slug: clinical-quality-language-cql
+    url: https://www.coherehealth.com/glossary/clinical-quality-language-cql
+  - term: "Clinical-grade AI"
+    slug: clinical-grade-ai
+    url: https://www.coherehealth.com/glossary/clinical-grade-ai
+  - term: "CMS (Centers for Medicare & Medicaid Services)"
+    slug: cms-centers-for-medicare-medicaid-services
+    url: https://www.coherehealth.com/glossary/cms-centers-for-medicare-medicaid-services
+  - term: "CMS certification number"
+    slug: cms-certification-number
+    url: https://www.coherehealth.com/glossary/cms-certification-number
+  - term: "CMS-0057-F (Final Rule)"
+    slug: cms-0057-f-final-rule
+    url: https://www.coherehealth.com/glossary/cms-0057-f-final-rule
+  - term: "Coding validation"
+    slug: coding-validation
+    url: https://www.coherehealth.com/glossary/coding-validation
+  - term: "Cohere Align™"
+    slug: cohere-align-tm
+    url: https://www.coherehealth.com/glossary/cohere-align-tm
+  - term: "Cohere Complete™"
+    slug: cohere-complete-tm
+    url: https://www.coherehealth.com/glossary/cohere-complete-tm
+  - term: "Cohere Connect™"
+    slug: cohere-connect-tm
+    url: https://www.coherehealth.com/glossary/cohere-connect-tm
+  - term: "Cohere Unify™"
+    slug: cohere-unify-tm
+    url: https://www.coherehealth.com/glossary/cohere-unify-tm
+  - term: "Compliance monitoring"
+    slug: compliance-monitoring
+    url: https://www.coherehealth.com/glossary/compliance-monitoring
+  - term: "CPT® (Current Procedural Terminology)"
+    slug: cpt-r-current-procedural-terminology
+    url: https://www.coherehealth.com/glossary/cpt-r-current-procedural-terminology
+  - term: "CRD (Coverage Requirements Discovery)"
+    slug: crd-coverage-requirements-discovery
+    url: https://www.coherehealth.com/glossary/crd-coverage-requirements-discovery
+  - term: "Data analytics"
+    slug: data-analytics
+    url: https://www.coherehealth.com/glossary/data-analytics
+  - term: "Delegated vendors"
+    slug: delegated-vendors
+    url: https://www.coherehealth.com/glossary/delegated-vendors
+  - term: "Denials management"
+    slug: denials-management
+    url: https://www.coherehealth.com/glossary/denials-management
+  - term: "Digital adoption"
+    slug: digital-adoption
+    url: https://www.coherehealth.com/glossary/digital-adoption
+  - term: "DRG (Diagnosis-Related Group)"
+    slug: drg-diagnosis-related-group
+    url: https://www.coherehealth.com/glossary/drg-diagnosis-related-group
+  - term: "DRG validation"
+    slug: drg-validation
+    url: https://www.coherehealth.com/glossary/drg-validation
+  - term: "DTR (Documentation Templates and Rules)"
+    slug: dtr-documentation-templates-and-rules
+    url: https://www.coherehealth.com/glossary/dtr-documentation-templates-and-rules
+  - term: "Durable Medical Equipment (DME)"
+    slug: durable-medical-equipment-dme
+    url: https://www.coherehealth.com/glossary/durable-medical-equipment-dme
+  - term: "Edit checks"
+    slug: edit-checks
+    url: https://www.coherehealth.com/glossary/edit-checks
+  - term: "EHR integration"
+    slug: ehr-integration-ku3su
+    url: https://www.coherehealth.com/glossary/ehr-integration-ku3su
+  - term: "EHR interoperability"
+    slug: ehr-interoperability
+    url: https://www.coherehealth.com/glossary/ehr-interoperability
+  - term: "EHR workflows"
+    slug: ehr-workflows
+    url: https://www.coherehealth.com/glossary/ehr-workflows
+  - term: "Elective surgery"
+    slug: elective-surgery
+    url: https://www.coherehealth.com/glossary/elective-surgery
+  - term: "Electronic Medical Record (EMR)"
+    slug: electronic-medical-record-emr-d0gkh
+    url: https://www.coherehealth.com/glossary/electronic-medical-record-emr-d0gkh
+  - term: "Episodic authorizations"
+    slug: episodic-authorizations
+    url: https://www.coherehealth.com/glossary/episodic-authorizations
+  - term: "Evidence-based care"
+    slug: evidence-based-care
+    url: https://www.coherehealth.com/glossary/evidence-based-care
+  - term: "FHIR (Fast Healthcare Interoperability Resources)"
+    slug: fhir-fast-healthcare-interoperability-resources
+    url: https://www.coherehealth.com/glossary/fhir-fast-healthcare-interoperability-resources
+  - term: "Fraud detection"
+    slug: fraud-detection
+    url: https://www.coherehealth.com/glossary/fraud-detection
+  - term: "FWA (Fraud, Waste, and Abuse)"
+    slug: fwa-fraud-waste-and-abuse
+    url: https://www.coherehealth.com/glossary/fwa-fraud-waste-and-abuse
+  - term: "Gold carding"
+    slug: gold-carding
+    url: https://www.coherehealth.com/glossary/gold-carding
+  - term: "Green lighting"
+    slug: green-lighting
+    url: https://www.coherehealth.com/glossary/green-lighting
+  - term: "Guided prior authorization (Guided PA)"
+    slug: guided-prior-authorization-guided-pa
+    url: https://www.coherehealth.com/glossary/guided-prior-authorization-guided-pa
+  - term: "Health equity"
+    slug: health-equity
+    url: https://www.coherehealth.com/glossary/health-equity
+  - term: "Health Information Exchange (HIE)"
+    slug: health-information-exchange-hie
+    url: https://www.coherehealth.com/glossary/health-information-exchange-hie
+  - term: "HEDIS (Healthcare Effectiveness Data and Information Set)"
+    slug: hedis-healthcare-effectiveness-data-and-information-set
+    url: https://www.coherehealth.com/glossary/hedis-healthcare-effectiveness-data-and-information-set
+  - term: "HITRUST certification"
+    slug: hitrust-certification
+    url: https://www.coherehealth.com/glossary/hitrust-certification
+  - term: "Implementation Guides (IGs)"
+    slug: implementation-guides-igs
+    url: https://www.coherehealth.com/glossary/implementation-guides-igs
+  - term: "Inpatient (IP)"
+    slug: inpatient-ip
+    url: https://www.coherehealth.com/glossary/inpatient-ip
+  - term: "Intelligent prior authorization"
+    slug: intelligent-prior-authorization
+    url: https://www.coherehealth.com/glossary/intelligent-prior-authorization
+  - term: "Interoperability"
+    slug: interoperability-v85l3
+    url: https://www.coherehealth.com/glossary/interoperability-v85l3
+  - term: "Large Language Model (LLM)"
+    slug: large-language-model-llm
+    url: https://www.coherehealth.com/glossary/large-language-model-llm
+  - term: "Line of Business (LOB)"
+    slug: line-of-business-lob
+    url: https://www.coherehealth.com/glossary/line-of-business-lob
+  - term: "Local Coverage Determinations (LCDs)"
+    slug: local-coverage-determinations-lcds
+    url: https://www.coherehealth.com/glossary/local-coverage-determinations-lcds
+  - term: "Machine learning (ML)"
+    slug: machine-learning-ml
+    url: https://www.coherehealth.com/glossary/machine-learning-ml
+  - term: "Manual prior authorization"
+    slug: manual-prior-authorization
+    url: https://www.coherehealth.com/glossary/manual-prior-authorization
+  - term: "Medical expenditure (medex)"
+    slug: medical-expenditure
+    url: https://www.coherehealth.com/glossary/medical-expenditure
+  - term: "Medical necessity determination"
+    slug: medical-necessity-determination
+    url: https://www.coherehealth.com/glossary/medical-necessity-determination
+  - term: "Medical policy digitization"
+    slug: medical-policy-digitization
+    url: https://www.coherehealth.com/glossary/medical-policy-digitization
+  - term: "Medicare Advantage (MA)"
+    slug: medicare-advantage-ma
+    url: https://www.coherehealth.com/glossary/medicare-advantage-ma
+  - term: "Musculoskeletal (MSK) care"
+    slug: musculoskeletal-msk-care-tl6q4
+    url: https://www.coherehealth.com/glossary/musculoskeletal-msk-care-tl6q4
+  - term: "National Coverage Determinations (NCDs)"
+    slug: national-coverage-determinations-ncds
+    url: https://www.coherehealth.com/glossary/national-coverage-determinations-ncds
+  - term: "National Provider Identifier (NPI)"
+    slug: national-provider-identifier-npi
+    url: https://www.coherehealth.com/glossary/national-provider-identifier-npi
+  - term: "Natural language processing"
+    slug: natural-language-processing-q5s6q
+    url: https://www.coherehealth.com/glossary/natural-language-processing-q5s6q
+  - term: "Net Promoter Score (NPS)"
+    slug: net-promoter-score-nps
+    url: https://www.coherehealth.com/glossary/net-promoter-score-nps
+  - term: "Nudge"
+    slug: nudge
+    url: https://www.coherehealth.com/glossary/nudge
+  - term: "Outpatient (OP)"
+    slug: outpatient-op
+    url: https://www.coherehealth.com/glossary/outpatient-op
+  - term: "PaaS (Platform as a Service)"
+    slug: paas-platform-as-a-service
+    url: https://www.coherehealth.com/glossary/paas-platform-as-a-service
+  - term: "PAL (Prior Authorization List)"
+    slug: pal-prior-authorization-list
+    url: https://www.coherehealth.com/glossary/pal-prior-authorization-list
+  - term: "PAS (Prior Authorization Support)"
+    slug: pas-prior-authorization-support
+    url: https://www.coherehealth.com/glossary/pas-prior-authorization-support
+  - term: "Physician burden"
+    slug: physician-burden
+    url: https://www.coherehealth.com/glossary/physician-burden
+  - term: "Physician burnout"
+    slug: physician-burnout
+    url: https://www.coherehealth.com/glossary/physician-burnout
+  - term: "Physician enablement"
+    slug: physician-enablement
+    url: https://www.coherehealth.com/glossary/physician-enablement
+  - term: "Platform adoption"
+    slug: platform-adoption
+    url: https://www.coherehealth.com/glossary/platform-adoption
+  - term: "PMPM (Per Member Per Month)"
+    slug: pmpm-per-member-per-month
+    url: https://www.coherehealth.com/glossary/pmpm-per-member-per-month
+  - term: "Predictive analytics"
+    slug: predictive-analytics
+    url: https://www.coherehealth.com/glossary/predictive-analytics
+  - term: "Prior authorization (PA)"
+    slug: prior-authorization-pa
+    url: https://www.coherehealth.com/glossary/prior-authorization-pa
+  - term: "Provider adoption"
+    slug: provider-adoption
+    url: https://www.coherehealth.com/glossary/provider-adoption
+  - term: "Provider burden"
+    slug: provider-burden-ul3cn
+    url: https://www.coherehealth.com/glossary/provider-burden-ul3cn
+  - term: "Provider enablement"
+    slug: provider-enablement
+    url: https://www.coherehealth.com/glossary/provider-enablement
+  - term: "Provider experience"
+    slug: provider-experience
+    url: https://www.coherehealth.com/glossary/provider-experience
+  - term: "Regulatory compliance"
+    slug: regulatory-compliance
+    url: https://www.coherehealth.com/glossary/regulatory-compliance
+  - term: "Service Level Agreement (SLA)"
+    slug: service-level-agreement-sla
+    url: https://www.coherehealth.com/glossary/service-level-agreement-sla
+  - term: "Site-of-service nudge"
+    slug: site-of-service-nudge
+    url: https://www.coherehealth.com/glossary/site-of-service-nudge
+  - term: "Software as a Service (SaaS)"
+    slug: software-as-a-service-saas
+    url: https://www.coherehealth.com/glossary/software-as-a-service-saas
+  - term: "STARS (Medicare Star Ratings)"
+    slug: stars-medicare-star-ratings
+    url: https://www.coherehealth.com/glossary/stars-medicare-star-ratings
+  - term: "Turnaround time (TAT)"
+    slug: turnaround-time-tat
+    url: https://www.coherehealth.com/glossary/turnaround-time-tat
+  - term: "Utilization management (UM)"
+    slug: utilization-management-um-cgj99
+    url: https://www.coherehealth.com/glossary/utilization-management-um-cgj99
+  - term: "Utilization Per 1,000 (UPK)"
+    slug: utilization-per-1-000-upk-22m1h-fva66
+    url: https://www.coherehealth.com/glossary/utilization-per-1-000-upk-22m1h-fva66
+  - term: "Value-based care (VBC)"
+    slug: value-based-care-vbc
+    url: https://www.coherehealth.com/glossary/value-based-care-vbc

@@ -1,0 +1,57 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.coherehealth.com/llms.txt
+note: >-
+  Cohere Health SERVES its own /llms.txt on the marketing host. It is written in
+  robots.txt directive syntax (User-Agent / Allow / Disallow / Sitemap) rather than
+  the markdown llms.txt convention, so it functions as an AI-crawler access policy
+  rather than as a navigational index for agents. It is saved verbatim as the
+  canonical LLMsTxt artifact because a provider-published document outranks a
+  generated one. The catalog-format document API Evangelist generated in the prior
+  round is retained alongside it.
+documents:
+  - file: cohere-health-llms.txt
+    method: searched
+    source: https://www.coherehealth.com/llms.txt
+    http_status: 200
+    content_type: text/plain; charset=utf-8
+    bytes: 2456
+    fetched: '2026-08-14'
+    format: robots-directive
+    canonical: true
+    summary: >-
+      Per-agent allow/deny policy for GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot,
+      Google-Extended and a catch-all. GPTBot and ChatGPT-User are restricted to an
+      explicit allow-list of 16 content sections (/blog, /news, /thought-leadership,
+      /platform, /utilization-management, /payment-integrity, /solutions, /our-story,
+      /press, /careers, /providers, /why-cohere, /glossary, /ai-headquarters,
+      /events-list, /event); ClaudeBot, PerplexityBot, Google-Extended and the
+      catch-all get Allow / . Every agent is denied the lead-gen and workflow paths
+      (/thank-you, /connect, /um-connects-newsletter-sign-up,
+      /electronic-letter-consent, /intake, /decision) and all query-parameter
+      variants (/*?*). Points at https://www.coherehealth.com/sitemap.xml.
+    differential_note: >-
+      This is a differential access policy: OpenAI's crawlers are allow-listed to a
+      subset while Anthropic's, Perplexity's and Google's are given the full site.
+      No agent-only content or agent paywall was observed — the same HTML is served
+      to a normal user agent.
+  - file: cohere-health-llms-catalog.txt
+    method: generated
+    source: apis.yml + repo artifacts
+    generated: '2026-07-24'
+    canonical: false
+    format: llms.txt-markdown
+    summary: >-
+      API Evangelist catalog-format llms.txt (H1 + blockquote + link sections for the
+      CRD/DTR/PAS APIs, standards, identity, compliance and company pages). Retained
+      because the provider's own file carries no API navigation.
+related:
+  - name: Guiding Principles of AI
+    url: https://www.coherehealth.com/guiding-principles-of-ai
+    note: >-
+      Published responsible-AI policy (accountability, transparency, privacy and
+      security, inclusiveness and equity) naming an AI Governance Board and stating
+      that models are monitored for bias, drift and accuracy and that no explicit
+      patient identifiers are used for care recommendations.
+  - name: AI Hub
+    url: https://www.coherehealth.com/ai-headquarters

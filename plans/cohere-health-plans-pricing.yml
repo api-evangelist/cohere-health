@@ -1,0 +1,32 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  https://www.coherehealth.com/utilization-management/api-based +
+  https://www.coherehealth.com/sitemap.xml +
+  https://www.coherehealth.com/pricing (404)
+plan_count: 0
+currency: null
+model: enterprise-contract
+note: >-
+  Cohere Health publishes NO pricing. There is no /pricing page (probed 2026-08-14,
+  HTTP 404) and no pricing URL appears anywhere in the 521-entry published sitemap.
+  Cohere Connect™, the API-based utilization-management offering that carries the
+  CRD / DTR / PAS FHIR APIs, is sold to health plans under enterprise contract; every
+  commercial call to action on the API product page routes to a sales form
+  ("Get CMS Ready", "Streamline Your Compliance", "Schedule a Demo") rather than to a
+  plan table or a self-serve signup. The only quantified commercial claims the company
+  publishes are ROI figures for the buyer ("up to 18x return on investment" for
+  utilization management, "9x return on investment" for payment integrity), which are
+  marketing outcomes, not prices. plan_count is 0 because that is the measurement, not
+  because pricing was not looked for.
+plans: []
+evidence:
+  - url: https://www.coherehealth.com/pricing
+    status: 404
+  - url: https://www.coherehealth.com/utilization-management/api-based
+    status: 200
+    note: Sales-gated CTAs only; no plans, tiers, quotas, or unit prices.
+  - url: https://www.coherehealth.com/sitemap.xml
+    status: 200
+    note: 521 URLs; no pricing or plans page present.
+contact_sales: https://www.coherehealth.com/connect

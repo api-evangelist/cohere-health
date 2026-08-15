@@ -1,16 +1,28 @@
-generated: '2026-07-24'
+generated: '2026-08-14'
 method: searched
 source: live /.well-known/ probes of Cohere Health hosts
 note: >-
-  The Cohere platform login host login.coherehealth.com is an Okta-backed
-  identity tenant and serves real OIDC/OAuth2 discovery documents. The marketing
-  host www.coherehealth.com and apex coherehealth.com serve no /.well-known/
-  discovery surface. The per-health-plan SMART-on-FHIR / FHIR API authorization
-  servers for the CRD/DTR/PAS APIs are provisioned per tenant and are not
-  anonymously discoverable, so no FHIR CapabilityStatement or SMART configuration
-  was captured here.
+  The Cohere platform login host login.coherehealth.com is an Okta-backed identity
+  tenant and serves real OIDC/OAuth2 discovery documents — those two 200s are the
+  only genuine /.well-known/ documents Cohere Health serves, and they are what the
+  WellKnown pointer rests on. The marketing host www.coherehealth.com and the apex
+  coherehealth.com serve no /.well-known/ surface; the apex returns a distinctive
+  "Invalid .well-known request" HTML 404 for every path. The per-health-plan
+  SMART-on-FHIR / FHIR authorization servers for the CRD/DTR/PAS APIs are provisioned
+  per tenant and are not anonymously discoverable, so no FHIR CapabilityStatement or
+  SMART configuration was captured.
+  TWO FALSE POSITIVES ARE RECORDED BELOW SO A LATER PASS DOES NOT RE-CREDIT THEM:
+  (1) next.coherehealth.com is a React single-page app whose catch-all answers HTTP
+  200 with the same HTML shell for EVERY path, including /.well-known/agent-card.json
+  and a deliberately nonsensical control path — none of its 200s are documents;
+  (2) help.coherehealth.com/.well-known/security.txt returns 200 but the document is
+  INTERCOM'S, not Cohere Health's (Contact: security@intercom.com,
+  Canonical: https://app.intercom.com/.well-known/security.txt) — the learning center
+  is hosted on Intercom, so this is the vendor's file on a vendored host and it earns
+  Cohere Health no SecurityTxt credit.
 hosts:
   - host: https://login.coherehealth.com
+    kind: identity (Okta tenant)
     documents:
       - path: /.well-known/openid-configuration
         status: 200
@@ -26,7 +38,12 @@ hosts:
         status: 405
       - path: /.well-known/ai-plugin.json
         status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 405
   - host: https://www.coherehealth.com
+    kind: marketing (Webflow)
     documents:
       - path: /.well-known/security.txt
         status: 404
@@ -40,9 +57,104 @@ hosts:
         status: 404
       - path: /.well-known/ai-plugin.json
         status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /security.txt
+        status: 404
+      - path: /robots.txt
+        status: 200
+        note: Sitemap-only; points at https://www.coherehealth.com/sitemap.xml
+      - path: /llms.txt
+        status: 200
+        file: ../llms/cohere-health-llms.txt
+        note: >-
+          Real provider-published document (2,456 bytes, text/plain). Not a
+          /.well-known/ path, indexed here because it is the only machine-readable
+          policy document Cohere Health serves from its own marketing host. See
+          llms/_index.yml.
   - host: https://coherehealth.com
+    kind: apex
     documents:
       - path: /.well-known/security.txt
         status: 404
       - path: /.well-known/openid-configuration
         status: 404
+  - host: https://core-platform.coherehealth.com
+    kind: platform API host (discovered in the provider-portal JS bundle)
+    note: >-
+      Every path answers a JSON 403 {"message":"Not Authorized","error":403}. The host
+      is real and company-controlled, and it is the API surface behind the provider
+      portal — but nothing is served anonymously, including the CDS Hooks discovery
+      endpoint, which the CDS Hooks specification expects to be public.
+    documents:
+      - path: /.well-known/smart-configuration
+        status: 403
+      - path: /cds-services
+        status: 403
+      - path: /fhir/cds-services
+        status: 403
+      - path: /fhir/metadata
+        status: 403
+      - path: /openapi.json
+        status: 403
+      - path: /v3/api-docs
+        status: 403
+      - path: /swagger.json
+        status: 403
+      - path: /api-docs
+        status: 403
+  - host: https://next.coherehealth.com
+    kind: provider portal SPA — SPA CATCH-ALL, ALL 200s REJECTED
+    note: >-
+      Returns HTTP 200 with an identical React HTML shell for every path probed,
+      including the control path /zzz-nonexistent-path-12345. No document exists at
+      any of these; they are recorded as rejected so a later pass does not read the
+      200 as a hit.
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 200
+        accepted: false
+        reason: HTML SPA shell, not a JSON AgentCard
+      - path: /.well-known/security.txt
+        status: 200
+        accepted: false
+        reason: HTML SPA shell
+      - path: /.well-known/api-catalog
+        status: 200
+        accepted: false
+        reason: HTML SPA shell
+      - path: /openapi.json
+        status: 200
+        accepted: false
+        reason: HTML SPA shell
+      - path: /zzz-nonexistent-path-12345
+        status: 200
+        accepted: false
+        reason: control probe proving the catch-all
+      - path: /robots.txt
+        status: 200
+        accepted: true
+        reason: 'Real: User-agent: * / Disallow: / — the whole portal is closed to crawlers.'
+  - host: https://help.coherehealth.com
+    kind: learning center (hosted on Intercom)
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        accepted: false
+        reason: >-
+          Intercom's own security.txt served from Intercom-hosted infrastructure
+          (Contact mailto:security@intercom.com, Contact https://bugcrowd.com/intercom,
+          Canonical https://app.intercom.com/.well-known/security.txt). It is the
+          platform vendor's vulnerability-disclosure program, not Cohere Health's.
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /llms.txt
+        status: 404
+summary:
+  real_documents: 2
+  hosts_probed: 6
+  security_txt_served_by_provider: false
+  agent_card_found: false
+  api_catalog_found: false

@@ -11,7 +11,11 @@ description: Cohere Health is a United States clinical-intelligence and utilizat
   Prior Authorization Final Rule (CMS-0057-F). The FHIR R4 APIs support SMART on FHIR
   applications and are sold to and embedded with health plans rather than offered through
   a self-serve public developer portal; the documented product surface is real but the
-  API endpoints are partner/health-plan gated.
+  API endpoints are partner/health-plan gated. The API-based offering is branded Cohere
+  Connect™ and sits alongside the Cohere Unify platform (utilization management, payment
+  integrity, appeals, care management, claims operations and quality), with in-workflow
+  submission via Epic's Payer Platform. The company reports more than 15 million
+  authorizations processed through the APIs and over 4,000 digitized policies.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Healthcare
@@ -25,7 +29,7 @@ tags:
 - SMART on FHIR
 - Interoperability
 created: '2026-07-24'
-modified: '2026-07-24T18:00:00Z'
+modified: '2026-08-14T00:00:00Z'
 specificationVersion: '0.19'
 apis:
 - aid: cohere-health:cohere-health-crd-api
@@ -78,8 +82,6 @@ apis:
   - type: Documentation
     url: https://www.coherehealth.com/utilization-management/api-based
 common:
-- type: DomainSecurity
-  url: security/cohere-health-domain-security.yml
 - type: Website
   url: https://www.coherehealth.com/
 - type: Documentation
@@ -116,6 +118,44 @@ common:
   url: security/cohere-health-domain-security.yml
 - type: LLMsTxt
   url: llms/cohere-health-llms.txt
+- type: Vocabulary
+  name: Cohere Health Glossary
+  url: vocabulary/cohere-health-glossary.yml
+- type: Packages
+  url: packages/cohere-health-packages.yml
+- type: Plans
+  url: plans/cohere-health-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cohere-health-rate-limits.yml
+- type: Glossary
+  url: https://www.coherehealth.com/glossary
+- type: Press
+  url: https://www.coherehealth.com/press
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-14'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    The Cohere Connect™ platform API host discovered in the provider-portal bundle,
+    core-platform.coherehealth.com, answers every anonymous request — including the
+    CDS Hooks discovery endpoint /cds-services and /fhir/metadata, which their specs
+    expect to be public — with a JSON 403 "Not Authorized", and the CRD/DTR/PAS FHIR
+    reference is provisioned per health-plan tenant with no public developer portal
+    anywhere in the 521-URL sitemap.
+  evidence:
+    - url: https://core-platform.coherehealth.com/cds-services
+      status: 403
+    - url: https://core-platform.coherehealth.com/fhir/metadata
+      status: 403
+    - url: https://core-platform.coherehealth.com/openapi.json
+      status: 403
+    - url: https://www.coherehealth.com/openapi.json
+      status: 404
+  checked: '2026-08-14'

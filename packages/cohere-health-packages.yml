@@ -1,0 +1,91 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  https://api.github.com/orgs/coherehealth/repos +
+  https://pypi.org/pypi/retrievall/json +
+  https://registry.npmjs.org/-/v1/search?text=coherehealth
+note: >-
+  Cohere Health publishes NO client SDK for its CRD / DTR / PAS FHIR APIs. Those
+  APIs are provisioned per health-plan tenant and there is no public developer
+  portal, so there is nothing for a client library to target. The single
+  first-party open-source package below is a machine-learning retrieval framework,
+  not an API client — it is recorded here because it is genuinely authored and
+  licensed by Cohere Health, and deliberately NOT wired as an `SDKs` pointer,
+  because doing so would credit the company with a client library it does not ship.
+  NOTE ON NAME COLLISION: the AI company Cohere (cohere.com) publishes `cohere` on
+  PyPI and `cohere-ai` on npm. Those are a DIFFERENT COMPANY and are excluded.
+registries_searched:
+  - registry: pypi
+    query: retrievall / retrievall-oss / cohere-retrievall
+    result: 404 — not published
+  - registry: npm
+    query: coherehealth
+    result: 0 results
+  - registry: github
+    query: github.com/orgs/coherehealth/repos
+    result: 10 public repos, 5 of them forks
+sdk_count: 0
+official_client_libraries: 0
+packages:
+  - language: python
+    registry: github
+    name: retrievall
+    url: https://github.com/CohereHealth/retrievall-oss
+    repo: https://github.com/CohereHealth/retrievall-oss
+    install: pip install git+https://github.com/CohereHealth/retrievall-oss
+    official: true
+    client_library: false
+    license: MIT
+    version: null
+    published: null
+    last_commit: '2025-08-06'
+    created: '2024-10-28'
+    description: >-
+      "A generalized retrieval framework" — a framework for retrieving whatever you
+      want, however you want to. Core dependencies pyarrow and polars; optional
+      extras for sparse text (scikit-learn) and OCR.
+    author: Cohere Health <machinelearning@coherehealth.com>
+    note: >-
+      Source-only distribution. Declared in pyproject.toml as project name
+      `retrievall` with setuptools_scm dynamic versioning, but the name is NOT
+      registered on PyPI (404) and the repository carries no git tags and no GitHub
+      releases, so there is no published version or release date to record — hence
+      `version: null` / `published: null` rather than a guess. A consumer can only
+      install from the default branch, which means they cannot pin. Last commit
+      2025-08-06, roughly a year stale as of this pass.
+other_public_repos:
+  - name: appeals-assist-prototype
+    url: https://github.com/CohereHealth/appeals-assist-prototype
+    kind: prototype
+    language: HTML
+    fork: false
+    last_push: '2026-08-14'
+  - name: cohere-surface-policy-mapping
+    url: https://github.com/CohereHealth/cohere-surface-policy-mapping
+    kind: prototype
+    language: HTML
+    fork: false
+    last_push: '2026-08-10'
+    description: Cohere Surface — NCD–LCD Policy Mapping prototype.
+  - name: cohere-surface-policy-mapping-concepts
+    url: https://github.com/CohereHealth/cohere-surface-policy-mapping-concepts
+    kind: prototype
+    language: HTML
+    fork: false
+    last_push: '2026-08-12'
+    description: NCD-LCD Policy Mapping — 3 interaction model concepts (Tree, Graph, Radial).
+  - name: slack-mcp
+    url: https://github.com/CohereHealth/slack-mcp
+    kind: fork
+    fork: true
+    last_push: '2026-06-19'
+    note: >-
+      A FORK of a third-party OAuth-based multi-user Slack MCP server. It is NOT a
+      Cohere Health MCP server and exposes none of Cohere Health's own APIs — it is
+      recorded here only so a later pass does not mistake it for one.
+  - name: smart-on-fhir-tutorial
+    url: https://github.com/CohereHealth/smart-on-fhir-tutorial
+    kind: fork
+    fork: true
+    last_push: '2022-03-22'
+    note: Fork of the SMART Health IT developer tutorial. No Cohere Health contract in it.

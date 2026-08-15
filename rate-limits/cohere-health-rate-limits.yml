@@ -1,0 +1,34 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  https://www.coherehealth.com/utilization-management/api-based +
+  https://core-platform.coherehealth.com/ (403) +
+  https://help.coherehealth.com/cohere-health-learning-center/en
+limit_count: 0
+headers: []
+retry_after: unknown
+exhaustion_status: unknown
+note: >-
+  No rate limits are published. Cohere Health has no public API reference to document
+  them in — the CRD / DTR / PAS FHIR APIs are provisioned per health-plan tenant and
+  the platform API host answers anonymous requests with a JSON 403 "Not Authorized"
+  on every path, so no live response headers could be observed either. Nothing was
+  inferred: neither a documented limit nor a runtime header (X-RateLimit-*,
+  RateLimit-*, Retry-After) could be established, so limit_count is 0 as a
+  measurement of absence rather than a placeholder.
+limits: []
+evidence:
+  - url: https://core-platform.coherehealth.com/openapi.json
+    status: 403
+    note: '{"message":"Not Authorized","error":403} — no anonymous response to read headers from.'
+  - url: https://www.coherehealth.com/utilization-management/api-based
+    status: 200
+    note: Product page; describes the API suite but states no throughput, quota, or limit.
+governing_deadlines:
+  - name: CMS-0057-F prior authorization decision timeframes
+    note: >-
+      Not an API rate limit. Recorded only to prevent a later pass from mistaking the
+      regulatory turnaround clock (72 hours expedited / 7 calendar days standard under
+      the CMS Interoperability and Prior Authorization Final Rule) for a published
+      request-rate limit. It is a decisioning SLA imposed on payers by regulation, and
+      Cohere Health publishes no API-level rate contract of its own.

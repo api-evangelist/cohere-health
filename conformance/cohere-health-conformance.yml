@@ -1,8 +1,11 @@
-generated: '2026-07-24'
+generated: '2026-08-14'
 method: searched
 source: >-
   https://www.coherehealth.com/utilization-management/api-based +
   https://www.coherehealth.com/news/cohere-health-earns-hitrust-r2-certification +
+  https://www.coherehealth.com/blog/cohere-health-receives-hitrust-recertification +
+  https://www.coherehealth.com/guiding-principles-of-ai +
+  https://www.coherehealth.com/llms.txt +
   https://login.coherehealth.com/.well-known/openid-configuration
 note: >-
   Standards and compliance posture for Cohere Health's utilization-management
@@ -49,14 +52,98 @@ standards:
   - id: rfc9457-problem-details
     conforms: false
     evidence: No public OpenAPI available to confirm application/problem+json error responses.
+  # AI-crawler access policy (evidenced by a live provider-served document)
+  - id: llms-txt
+    conforms: true
+    evidence: >-
+      https://www.coherehealth.com/llms.txt returns HTTP 200, text/plain, 2,456 bytes —
+      a provider-authored per-agent access policy. Written in robots.txt directive
+      syntax rather than the markdown llms.txt convention. Saved verbatim to
+      llms/cohere-health-llms.txt.
+undetermined:
+  # Standards whose conformance could NOT be established either way, because the
+  # surface that would answer the question is gated. Recorded so a later pass does
+  # not read silence as a negative.
+  - id: cds-hooks
+    reason: >-
+      The provider-portal JS bundle references a /fhir/cds/crd route, and the CDS
+      Hooks discovery endpoint /cds-services exists on the platform API host — but
+      core-platform.coherehealth.com answers every anonymous request with a JSON 403
+      {"message":"Not Authorized","error":403}, including the discovery endpoint the
+      CDS Hooks specification expects to be public. Conformance is neither confirmed
+      nor refuted.
+    probed:
+      - url: https://core-platform.coherehealth.com/cds-services
+        status: 403
+      - url: https://core-platform.coherehealth.com/fhir/cds-services
+        status: 403
+  - id: fhir-capabilitystatement
+    reason: >-
+      /fhir/metadata on the platform API host returns 403 rather than a
+      CapabilityStatement, and the per-health-plan FHIR endpoints are not
+      anonymously addressable, so the declared FHIR R4 conformance could not be
+      verified against a served CapabilityStatement.
+    probed:
+      - url: https://core-platform.coherehealth.com/fhir/metadata
+        status: 403
+ai_governance:
+  policy_url: https://www.coherehealth.com/guiding-principles-of-ai
+  hub_url: https://www.coherehealth.com/ai-headquarters
+  oversight_body: AI Governance Board
+  principles:
+    - name: Accountability
+      summary: >-
+        AI supports rather than replaces clinicians; 150+ clinical experts keep
+        decisions grounded in evidence-based knowledge.
+    - name: Transparency
+      summary: >-
+        The clinical basis of every approval or pend is explained to the requesting
+        provider; models are continuously monitored for bias, drift and accuracy.
+    - name: Privacy and security
+      summary: >-
+        No explicit patient identifiers (names, locations) are used for care
+        recommendations; HIPAA, CMS interoperability and state prior-authorization
+        requirements are asserted.
+    - name: Inclusiveness and equity
+      summary: >-
+        Standards of care applied with fairness across all members; pended requests
+        reviewed by clinical experts under AI Governance Board oversight.
+  agent_access_policy:
+    source: https://www.coherehealth.com/llms.txt
+    artifact: llms/cohere-health-llms.txt
+    differential: true
+    note: >-
+      Differentiated by crawler: GPTBot and ChatGPT-User are restricted to a 16-path
+      allow-list, while ClaudeBot, PerplexityBot, Google-Extended and the catch-all
+      receive Allow: /. All agents are denied the lead-gen and workflow paths
+      (/connect, /intake, /decision, /thank-you, /electronic-letter-consent,
+      /um-connects-newsletter-sign-up) and every query-parameter variant.
 compliance:
   program: HITRUST
   certifications:
     - name: HITRUST r2 (Risk-based, 2-year) Certification
       scope: Cohere Health Utilization Management (UM) collaboration platform
       first_earned: '2022-08-17'
+      recertified: '2024-05'
+      recertification_announced: '2024-06-11'
       status: certified (maintained via recertification)
       source: https://www.coherehealth.com/news/cohere-health-earns-hitrust-r2-certification
+      recertification_source: https://www.coherehealth.com/blog/cohere-health-receives-hitrust-recertification
+      note: >-
+        Recertification post states the assessment covered over 300 assessment
+        questions and 900 pieces of submitted evidence, with hundreds of security
+        controls tested by a third party throughout the year. No recertification
+        newer than May 2024 is published, so the current standing of the two-year
+        r2 cycle is not evidenced on the public site as of 2026-08-14.
+  frameworks:
+    - name: HITRUST CSF
+      role: primary certification framework
+    - name: NIST Cybersecurity Framework
+      role: >-
+        The company states its cybersecurity program is modeled on the NIST five
+        functions (Identify, Protect, Detect, Respond, Recover). Self-asserted
+        alignment, not a certification.
+      source: https://www.coherehealth.com/blog/cohere-health-receives-hitrust-recertification
   standards_covered: [ISO, NIST, PCI, HIPAA, GDPR]
   note: >-
     HITRUST r2 certification demonstrates the platform meets national and

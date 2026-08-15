@@ -1,32 +1,109 @@
-# Cohere Health
+# LLMs.txt for https://www.coherehealth.com
+# Purpose: allow LLMs to use public content; block gated/lead-gen and private flows.
 
-> Cohere Health is a United States clinical-intelligence and utilization-management company that digitizes prior authorization for health plans. Its Unify platform applies clinical AI and evidence-based policy to streamline authorization intake, review, and decisioning. Its API suite implements the HL7 Da Vinci Burden Reduction guides — Coverage Requirements Discovery (CRD), Documentation Templates and Rules (DTR), and Prior Authorization Support (PAS) — to help payers meet the CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F). The FHIR R4 APIs support SMART on FHIR and are sold to / embedded with health plans rather than offered through a self-serve public developer portal; the documented product surface is real but the API endpoints are partner/health-plan gated.
+# --- Major LLM user-agents ---
+User-Agent: GPTBot
+Allow: /blog
+Allow: /news
+Allow: /thought-leadership
+Allow: /platform
+Allow: /utilization-management
+Allow: /payment-integrity
+Allow: /solutions
+Allow: /our-story
+Allow: /press
+Allow: /careers
+Allow: /providers
+Allow: /why-cohere
+Allow: /glossary
+Allow: /ai-headquarters
+Allow: /events-list
+Allow: /event
+Disallow: /thank-you/
+Disallow: /thank-you/*
+Disallow: /connect
+Disallow: /connect/*
+Disallow: /um-connects-newsletter-sign-up
+Disallow: /electronic-letter-consent
+Disallow: /intake
+Disallow: /decision
+Disallow: /*?*            # avoid query-parameter variants
 
-## APIs
-- [Coverage Requirements Discovery (CRD) API](https://www.coherehealth.com/utilization-management/api-based): Instantly verify whether prior authorization is required and confirm service coverage at the point of care (HL7 Da Vinci CRD, FHIR R4, SMART on FHIR). Partner/health-plan gated.
-- [Documentation Templates and Rules (DTR) API](https://www.coherehealth.com/utilization-management/api-based): Intelligently gather and submit the documentation a prior authorization request requires, driven by digitized medical policy (FHIR Questionnaire + CQL; HL7 Da Vinci DTR). Partner/health-plan gated.
-- [Prior Authorization Support (PAS) API](https://www.coherehealth.com/utilization-management/api-based): Submit an authorization request and return the outcome, wrapping X12 278 in a FHIR interface for CMS-0057-F compliance (HL7 Da Vinci PAS). Partner/health-plan gated.
+User-Agent: ChatGPT-User
+Allow: /blog
+Allow: /news
+Allow: /thought-leadership
+Allow: /platform
+Allow: /utilization-management
+Allow: /payment-integrity
+Allow: /solutions
+Allow: /our-story
+Allow: /press
+Allow: /careers
+Allow: /providers
+Allow: /why-cohere
+Allow: /glossary
+Allow: /ai-headquarters
+Allow: /events-list
+Allow: /event
+Disallow: /thank-you/
+Disallow: /thank-you/*
+Disallow: /connect
+Disallow: /connect/*
+Disallow: /um-connects-newsletter-sign-up
+Disallow: /electronic-letter-consent
+Disallow: /intake
+Disallow: /decision
+Disallow: /*?*
 
-## Standards & Conformance
-- HL7 Da Vinci Burden Reduction Implementation Guides: CRD, DTR, PAS (FHIR R4)
-- SMART on FHIR (OAuth2) application support
-- X12 278 utilization-management exchange (wrapped by PAS)
-- CMS-0057-F (Interoperability and Prior Authorization Final Rule) alignment
-- OAuth 2.0 / OpenID Connect on the platform login host (PKCE S256)
+User-Agent: ClaudeBot
+Allow: /
+Disallow: /thank-you/
+Disallow: /thank-you/*
+Disallow: /connect
+Disallow: /connect/*
+Disallow: /um-connects-newsletter-sign-up
+Disallow: /electronic-letter-consent
+Disallow: /intake
+Disallow: /decision
+Disallow: /*?*
 
-## Identity & Auth
-- [OpenID Connect discovery](https://login.coherehealth.com/.well-known/openid-configuration): Okta-backed platform login (login.coherehealth.com). SMART-on-FHIR API endpoints/scopes are provisioned per health-plan tenant and not published anonymously.
+User-Agent: PerplexityBot
+Allow: /
+Disallow: /thank-you/
+Disallow: /thank-you/*
+Disallow: /connect
+Disallow: /connect/*
+Disallow: /um-connects-newsletter-sign-up
+Disallow: /electronic-letter-consent
+Disallow: /intake
+Disallow: /decision
+Disallow: /*?*
 
-## Security & Compliance
-- [HITRUST r2 Certification](https://www.coherehealth.com/news/cohere-health-earns-hitrust-r2-certification): Risk-based 2-year certification of the UM platform (first earned 2022-08-17); covers ISO, NIST, PCI, HIPAA, GDPR standards.
+# Google-Extended controls AI training for Google; keep public, block gated.
+User-Agent: Google-Extended
+Allow: /
+Disallow: /thank-you/
+Disallow: /thank-you/*
+Disallow: /connect
+Disallow: /connect/*
+Disallow: /um-connects-newsletter-sign-up
+Disallow: /electronic-letter-consent
+Disallow: /intake
+Disallow: /decision
+Disallow: /*?*
 
-## Docs & Company
-- [API product page](https://www.coherehealth.com/utilization-management/api-based)
-- [Platform overview](https://www.coherehealth.com/platform)
-- [Learning Center](https://help.coherehealth.com/cohere-health-learning-center/en)
-- [Blog](https://www.coherehealth.com/blog)
-- [Provider onboarding (gated)](https://next.coherehealth.com/organization_onboarding)
-- [Portal login](https://login.coherehealth.com/)
-- [GitHub organization](https://github.com/coherehealth)
-- [Terms and Conditions](https://www.coherehealth.com/terms-and-conditions)
-- [Privacy Policy](https://www.coherehealth.com/privacy-policy)
+# Catch-all for other LLM crawlers
+User-Agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /thank-you/*
+Disallow: /connect
+Disallow: /connect/*
+Disallow: /um-connects-newsletter-sign-up
+Disallow: /electronic-letter-consent
+Disallow: /intake
+Disallow: /decision
+Disallow: /*?*
+
+Sitemap: https://www.coherehealth.com/sitemap.xml
