@@ -30,7 +30,7 @@ tags:
 - Interoperability
 created: '2026-07-24'
 modified: '2026-08-14T00:00:00Z'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: cohere-health:cohere-health-crd-api
   name: Cohere Health Coverage Requirements Discovery (CRD) API
