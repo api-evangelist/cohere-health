@@ -16,6 +16,17 @@ description: Cohere Health is a United States clinical-intelligence and utilizat
   integrity, appeals, care management, claims operations and quality), with in-workflow
   submission via Epic's Payer Platform. The company reports more than 15 million
   authorizations processed through the APIs and over 4,000 digitized policies.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Healthcare
