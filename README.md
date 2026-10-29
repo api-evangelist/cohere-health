@@ -1,4 +1,4 @@
-# Cohere Health (cohere-health)
+# Cohere Health
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,93 +64,112 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cohere Health is a United States clinical-intelligence and utilization-management company that digitizes prior authorization for health plans. Its Unify platform applies clinical AI and evidence-based policy to authorization intake, review, and decisioning, and its API suite implements the HL7 Da Vinci Burden Reduction guides — Coverage Requirements Discovery (CRD), Documentation Templates and Rules (DTR), and Prior Authorization Support (PAS) — to help payers meet the CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F). The FHIR R4 APIs support SMART on FHIR applications and are sold to and embedded with health plans rather than offered through a self-serve public developer portal.
+Cohere Health is a United States clinical-intelligence and utilization-management company that digitizes prior authorization for health plans. Its Unify platform applies clinical AI and evidence-based policy to streamline authorization intake, review, and decisioning, and its API suite implements the HL7 Da Vinci Burden Reduction guides — Coverage Requirements Discovery (CRD), Documentation Templates and Rules (DTR), and Prior Authorization Support (PAS) — to help payers meet the CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F). The FHIR R4 APIs support SMART on FHIR applications and are sold to and embedded with health plans rather than offered through a self-serve public developer portal; the documented product surface is real but the API endpoints are partner/health-plan gated. The API-based offering is branded Cohere Connect™ and sits alongside the Cohere Unify platform (utilization management, payment integrity, appeals, care management, claims operations and quality), with in-workflow submission via Epic's Payer Platform. The company reports more than 15 million authorizations processed through the APIs and over 4,000 digitized policies.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cohere-health/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cohere-health/refs/heads/main/apis.yml)
+**Areas:** Healthcare · United States · Prior Authorization · Utilization Management · Payers · FHIR · HL7 · Da Vinci · SMART on FHIR · Interoperability
 
-## Tags
+## Cohere Health on APIs.io
 
-- Healthcare
-- United States
-- Prior Authorization
-- Utilization Management
-- Payer
-- FHIR
-- HL7
-- Da Vinci
-- SMART on FHIR
-- Interoperability
+Everything profiled for Cohere Health is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cohere-health/](https://apis.io/providers/cohere-health/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-07-24
-- **Modified:** 2026-07-24
+- [Cohere Health Coverage Requirements Discovery (CRD) API](https://apis.io/apis/cohere-health/cohere-health-crd-api/) — HL7 Da Vinci Coverage Requirements Discovery (CRD) FHIR API that lets a provider system instantly verify whether prior authorization is required and confirm…
+- [Cohere Health Documentation Templates and Rules (DTR) API](https://apis.io/apis/cohere-health/cohere-health-dtr-api/) — HL7 Da Vinci Documentation Templates and Rules (DTR) FHIR API that intelligently gathers and submits the documentation a prior authorization request…
+- [Cohere Health Prior Authorization Support (PAS) API](https://apis.io/apis/cohere-health/cohere-health-pas-api/) — HL7 Da Vinci Prior Authorization Support (PAS) FHIR API that submits an authorization request and returns the outcome, wrapping X12 278…
 
-## APIs
+### Published properties
 
-### Cohere Health Coverage Requirements Discovery (CRD) API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-HL7 Da Vinci Coverage Requirements Discovery (CRD) FHIR API that lets a provider system instantly verify whether prior authorization is required and confirm service coverage at the point of care.
+#### Security (2)
 
-- **Human URL:** [https://www.coherehealth.com/utilization-management/api-based](https://www.coherehealth.com/utilization-management/api-based)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Cohere Health Authentication](https://apis.io/security/cohere-health/cohere-health-authentication/)
+- [Cohere Health Domain Security](https://apis.io/security/cohere-health/cohere-health-domain-security/)
 
-- Coverage Requirements Discovery
-- FHIR
-- Da Vinci
-- Prior Authorization
+#### OAuth scopes (1)
 
-#### Properties
+The permissions the API asks for.
 
-- [Documentation](https://www.coherehealth.com/utilization-management/api-based)
+- [Cohere Health Scopes](https://apis.io/scopes/cohere-health/cohere-health-scopes/)
 
-### Cohere Health Documentation Templates and Rules (DTR) API
+#### Plans and pricing (1)
 
-HL7 Da Vinci Documentation Templates and Rules (DTR) FHIR API that intelligently gathers and submits the documentation a prior authorization request requires, driven by digitized medical policy (FHIR Questionnaire plus CQL).
+Published plans, tiers and prices.
 
-- **Human URL:** [https://www.coherehealth.com/utilization-management/api-based](https://www.coherehealth.com/utilization-management/api-based)
+- [Cohere Health Plans Pricing](https://apis.io/plans/cohere-health/cohere-health-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Documentation Templates and Rules
-- FHIR
-- Da Vinci
-- Prior Authorization
+Published request limits.
 
-#### Properties
+- [Cohere Health Rate Limits](https://apis.io/rate-limits/cohere-health/cohere-health-rate-limits/)
 
-- [Documentation](https://www.coherehealth.com/utilization-management/api-based)
+## Where to find this API
 
-### Cohere Health Prior Authorization Support (PAS) API
-
-HL7 Da Vinci Prior Authorization Support (PAS) FHIR API that submits an authorization request and returns the outcome, wrapping X12 278 utilization-management exchange in a FHIR interface for CMS-0057-F compliance.
-
-- **Human URL:** [https://www.coherehealth.com/utilization-management/api-based](https://www.coherehealth.com/utilization-management/api-based)
-
-#### Tags
-
-- Prior Authorization Support
-- FHIR
-- Da Vinci
-- Prior Authorization
-
-#### Properties
-
-- [Documentation](https://www.coherehealth.com/utilization-management/api-based)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.coherehealth.com/)
 - [Documentation](https://www.coherehealth.com/utilization-management/api-based)
-- [Login](https://login.coherehealth.com/)
-- [GitHub Organization](https://github.com/coherehealth)
-- [LinkedIn](https://www.linkedin.com/company/cohere-health)
-- [Blog](https://www.coherehealth.com/blog)
+- [Sign up](https://next.coherehealth.com/organization_onboarding)
 - [Support](https://www.coherehealth.com/connect)
-- [Privacy Policy](https://www.coherehealth.com/privacy-policy)
+- [Blog](https://www.coherehealth.com/blog)
+- [Compliance](https://www.coherehealth.com/news/cohere-health-earns-hitrust-r2-certification)
+- [Terms of service](https://www.coherehealth.com/terms-and-conditions)
+- [Privacy policy](https://www.coherehealth.com/privacy-policy)
+- [GitHub](https://github.com/coherehealth)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 70.5 |
+| Contract quality | 0.0 |
+| Contract governance | 33.3 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 35.5 |
+
+**Agent readiness 17.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 47.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cohere-health/](https://apis.io/providers/cohere-health/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cohere Health: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cohere-health/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
